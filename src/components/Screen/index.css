@@ -1,0 +1,11 @@
+.screen{
+  margin: auto;
+  margin-top: 2em;
+  border: 3px solid #06283D;
+  border-radius: 10px;
+  width: 75vw;
+  height: 65vh !important;
+  display: flex;
+  padding: 15px 10px 0px 10px;
+  align-items: flex-end; 
+}

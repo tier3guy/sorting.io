@@ -1,0 +1,26 @@
+.btn-container{
+  margin: auto;
+  margin-top: 1.5em;
+  width: calc(75vw + 20px);
+  display: flex;
+  padding: 0px;
+  align-items: center; 
+  justify-content: space-around;
+}
+
+
+.btn{
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: 1em;
+  background: #06283D;
+  color: #DFF6FF;
+  transition: all 0.3s;
+  border: 2px solid #06283D;
+}
+
+
+.btn:hover, .btn:focus, .btn:active {
+  background: #0f5885;
+}

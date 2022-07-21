@@ -1,0 +1,10 @@
+.header-container{
+  width: 100%;
+  padding: 0.01em 1em;
+  background: #06283D;
+}
+
+.header-container > center > h2 {
+  color: #DFF6FF;
+  font-weight: 200;
+}
