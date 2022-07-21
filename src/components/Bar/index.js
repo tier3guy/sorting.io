@@ -11,7 +11,9 @@ export default class Bar extends React.Component {
     const height = `${this.props.height}px`;
 
     return (
-      <div style={{ height: height }} className="bar"></div>
+      <div style={{ height: height }} className="bar">
+      <div class="height-text"> { this.props.height } </div>
+      </div>
     );
   }
 }

@@ -2,4 +2,18 @@
   width: 20px;
   background: #06283D;
   margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+
+.height-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-90deg);
+  color: #DFF6FF;
+  font-size: 12px;
+  padding: 10px;
 }
