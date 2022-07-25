@@ -8,15 +8,6 @@ import ButtonContainer from './components/ButtonContainer';
 
 import { getMergeSortAnimations } from './Algorithms/sortingAlgorithms';
 
-const ANIMATION_SPEED_MS = 500;
-
-// This is the main color of the array bars.
-const PRIMARY_COLOR = 'turquoise';
-
-// This is the color of array bars that are being compared throughout the animations.
-const SECONDARY_COLOR = 'red';
-
-
 /**
  * @Component - Main APP component
  * @Renders - the entire app 
@@ -32,6 +23,8 @@ export default class App extends React.Component {
     // States - array
     this.state = {
       array: [],
+      ANIMATION_SPEED_MS: 300,
+      LENGTH: 26,
     }
   }
 
@@ -39,8 +32,9 @@ export default class App extends React.Component {
   MAX_HEIGHT = 380;
   MIN_HEIGHT = 25;
 
-  LENGTH = 26;
-
+  // COLORS 
+  PRIMARY_COLOR = '#2D31FA';
+  SECONDARY_COLOR = '#F66B0E';
 
 
   // @Method - generates random array and sets it into the state
@@ -48,7 +42,7 @@ export default class App extends React.Component {
 
     const array = [];
 
-    for (var i = 0; i < this.LENGTH; i++) {
+    for (var i = 0; i < this.state.LENGTH; i++) {
       let num = Math.floor(Math.random() * (this.MAX_HEIGHT - this.MIN_HEIGHT + 1) + this.MIN_HEIGHT);
       array.push(num);
     }
@@ -72,18 +66,18 @@ export default class App extends React.Component {
         const [barOneIdx, barTwoIdx] = animations[i];
         const barOneStyle = arrayBars[barOneIdx].style;
         const barTwoStyle = arrayBars[barTwoIdx].style;
-        const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
+        const color = i % 3 === 0 ? this.SECONDARY_COLOR : this.PRIMARY_COLOR;
         setTimeout(() => {
           barOneStyle.backgroundColor = color;
           barTwoStyle.backgroundColor = color;
-        }, i * ANIMATION_SPEED_MS);
+        }, i * this.state.ANIMATION_SPEED_MS);
       } 
       else {
         setTimeout(() => {
           const [barOneIdx, newHeight] = animations[i];
           const barOneStyle = arrayBars[barOneIdx].style;
           barOneStyle.height = `${newHeight}px`;
-        }, i * ANIMATION_SPEED_MS);
+        }, i * this.state.ANIMATION_SPEED_MS);
       }
     }
   }
@@ -101,7 +95,7 @@ export default class App extends React.Component {
           handlerNewArray={this.generateArray}
           mergeSort={this.mergeSort}
           array={this.state.array}
-          n={this.LENGTH}
+          n={this.state.LENGTH}
         />
 
         <div className="footer"></div>
