@@ -4,11 +4,6 @@ import Bar from '../Bar';
 
 export default class Screen extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-  }
-
   
   render() {
     
